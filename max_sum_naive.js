@@ -15,4 +15,4 @@ for(let i=0;i<arr.length-num+1;i++)
 }
 return maxSum;
 }
-console.log(max_sum_naive([1,2,3,4,5,,8,6,7],2));
+console.log(max_sum_naive([1,2,3,4,5,8,6,7],2));

@@ -1,10 +1,9 @@
-function partition(arr){
-let pivot=arr[0];
-let index=0,temp;
-for(let i=1;i<arr.length;i++)
+function partition(arr,p,r){
+let pivot=arr[p];
+let index=p,temp;
+for(let i=p+1;i<=r;i++)
 {
-    
-    if(pivot>arr[i])
+     if(pivot>arr[i])
     {
      index++;
      if(index!==i)
@@ -13,24 +12,24 @@ for(let i=1;i<arr.length;i++)
      arr[i]=temp;
     }
 }
+}
 
-        
-    }
     temp=arr[index];
-        arr[index]=arr[0];
-        arr[0]=temp;
+        arr[index]=arr[p];
+        arr[p]=temp;
 return index;
 }
 function quickSort(arr,p=0,r=arr.length-1){
-    //let newArray=[];
-    let temp;
-    let index=partition(arr);
+    let index=partition(arr,p,r);
+    
     if(p<r)
-    {   quickSort(arr,p,index-1);
-        quickSort(arr,index+1,r);
+    {
+    quickSort(arr,p,index-1);
+    quickSort(arr,index+1,r);
     }
+    
 return arr;
 }
-let arr=[8,6,1,9,2]
+let arr=[90,6,1,9,2,44,99,63,21]
 console.log(quickSort(arr));
 console.log(arr);

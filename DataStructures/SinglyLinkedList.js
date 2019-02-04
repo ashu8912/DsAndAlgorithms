@@ -61,6 +61,15 @@ class SinglyLinkedList{
      }
      return current;
     }
+    shift(){
+        if(!this.head)
+        {
+            return undefined;
+        }
+        let temp=this.head;
+        this.head=temp.next;
+        return temp;
+    }
     // traverse(){
     //     let current=this.head;
     //     while(current)
@@ -75,6 +84,6 @@ singlyLinkedList.push("ghildiyal");
 singlyLinkedList.push("hello");
 singlyLinkedList.push("champ");
 
-console.log(singlyLinkedList.pop());
-console.log((singlyLinkedList.tail));
+console.log(singlyLinkedList.shift());
+console.log((singlyLinkedList));
 //singlyLinkedList.traverse();

@@ -61,6 +61,7 @@ class SinglyLinkedList{
      }
      return current;
     }
+    //delete from the beginning
     shift(){
         if(!this.head)
         {
@@ -68,7 +69,43 @@ class SinglyLinkedList{
         }
         let temp=this.head;
         this.head=temp.next;
+        this.length--;
+        if(this.length===0)
+        {
+            this.tail=null;
+        }
         return temp;
+    }
+    //insert at the beginning
+    unshift(val)
+    {
+        let newNode=new Node(val);
+        if(!this.head)
+        {
+            this.head=newNode;
+            this.tail=this.head;
+        }
+        else{
+        newNode.next=this.head;
+        this.head=newNode;
+        }
+        this.length++;
+        return newNode;
+    }
+    get(index)
+    {
+        if(index<0 || this.length<index)
+        {
+            return null;
+        }
+        let counter=0;
+        let current=this.head;
+        while(counter<index)
+        {
+            current=current.next;
+            counter++;
+        }
+        return current;
     }
     // traverse(){
     //     let current=this.head;
@@ -84,6 +121,6 @@ singlyLinkedList.push("ghildiyal");
 singlyLinkedList.push("hello");
 singlyLinkedList.push("champ");
 
-console.log(singlyLinkedList.shift());
-console.log((singlyLinkedList));
+console.log(singlyLinkedList.unshift("hero"));
+console.log((singlyLinkedList.get(2)));
 //singlyLinkedList.traverse();

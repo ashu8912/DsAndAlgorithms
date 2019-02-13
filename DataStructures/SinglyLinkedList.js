@@ -117,6 +117,29 @@ class SinglyLinkedList{
       return false;
 
     }
+    insert(index,val)
+    {
+        if(index<0 || index>this.length)
+        {
+            return false;
+        }
+        if(index===this.length)
+        {
+            return Boolean(this.push(val));
+        }
+        if(index===0)
+        {
+            return Boolean(this.unshift(val));
+        }
+        const newNode=new Node(val);
+          let prev=this.get(index-1);
+          let after=prev.next;
+          prev.next=newNode;
+          newNode.next=after;
+          this.length++;
+          return true;
+        
+    }
     // traverse(){
     //     let current=this.head;
     //     while(current)
@@ -130,7 +153,8 @@ singlyLinkedList.push("ashu");
 singlyLinkedList.push("ghildiyal");
 singlyLinkedList.push("hello");
 singlyLinkedList.push("champ");
-console.log(singlyLinkedList.unshift("hero"));
-console.log((singlyLinkedList.set(4,"how are you")));
+// console.log(singlyLinkedList.unshift("hero"));
+// console.log((singlyLinkedList.set(4,"how are you")));
+console.log(singlyLinkedList.insert(4,"qwer"));
 console.log(singlyLinkedList);
 //singlyLinkedList.traverse();

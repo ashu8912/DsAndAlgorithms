@@ -107,6 +107,16 @@ class SinglyLinkedList{
         }
         return current;
     }
+    set(index,value){
+      let node=this.get(index);
+      if(node)
+      {
+          node.val=value;
+          return true;
+      }
+      return false;
+
+    }
     // traverse(){
     //     let current=this.head;
     //     while(current)
@@ -120,7 +130,7 @@ singlyLinkedList.push("ashu");
 singlyLinkedList.push("ghildiyal");
 singlyLinkedList.push("hello");
 singlyLinkedList.push("champ");
-
 console.log(singlyLinkedList.unshift("hero"));
-console.log((singlyLinkedList.get(2)));
+console.log((singlyLinkedList.set(4,"how are you")));
+console.log(singlyLinkedList);
 //singlyLinkedList.traverse();

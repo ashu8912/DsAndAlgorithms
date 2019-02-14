@@ -140,6 +140,25 @@ class SinglyLinkedList{
           return true;
         
     }
+    remove(index)
+    {
+        if(index<0 || index>=this.length)
+        {
+            return undefined;
+        }
+        if(index===0)
+        {
+            return this.shift();
+        }
+        if(index===this.length-1)
+        {
+            return this.pop();
+        }
+        let prev=this.get(index-1);
+        let temp=prev.next;
+        prev.next=temp.next;
+        return temp;
+    }
     // traverse(){
     //     let current=this.head;
     //     while(current)
@@ -156,5 +175,6 @@ singlyLinkedList.push("champ");
 // console.log(singlyLinkedList.unshift("hero"));
 // console.log((singlyLinkedList.set(4,"how are you")));
 console.log(singlyLinkedList.insert(4,"qwer"));
+console.log(singlyLinkedList.remove(1));
 console.log(singlyLinkedList);
 //singlyLinkedList.traverse();

@@ -20,16 +20,15 @@ for(let i=p+1;i<=r;i++)
 return index;
 }
 function quickSort(arr,p=0,r=arr.length-1){
-    let index=partition(arr,p,r);
     
     if(p<r)
     {
+    let index=partition(arr,p,r);
     quickSort(arr,p,index-1);
     quickSort(arr,index+1,r);
     }
     
 return arr;
 }
-let arr=[90,6,1,9,2,44,99,63,21]
+let arr=[32,1,2,34,21,89,21,21,42,42,54,63];
 console.log(quickSort(arr));
-console.log(arr);

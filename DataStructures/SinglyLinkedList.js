@@ -157,7 +157,35 @@ class SinglyLinkedList{
         let prev=this.get(index-1);
         let temp=prev.next;
         prev.next=temp.next;
+        this.length--
         return temp;
+    }
+    reverse()
+    {
+        let node=this.head;
+        this.head=this.tail;
+        this.tail=node;
+        let prev=null;
+        let next;
+        while(node)
+            {
+            next=node.next;
+            node.next=prev;
+            prev=node;
+            node=next;
+        }
+        return this;
+    }
+    print(){
+        let arr=[];
+        let current=this.head;
+        while(current.next)
+        {
+            arr.push(current.val);
+            current=current.next;
+        }
+        arr.push(current.val);
+        return arr;
     }
     // traverse(){
     //     let current=this.head;
@@ -176,5 +204,8 @@ singlyLinkedList.push("champ");
 // console.log((singlyLinkedList.set(4,"how are you")));
 console.log(singlyLinkedList.insert(4,"qwer"));
 console.log(singlyLinkedList.remove(1));
-console.log(singlyLinkedList);
+console.log(singlyLinkedList.print());
+
+console.log(singlyLinkedList.reverse());
+console.log(singlyLinkedList.print());
 //singlyLinkedList.traverse();

@@ -1,3 +1,8 @@
+/*
+doubly linked list are similar to singlyLinkedList except
+here the list items have a reference to there previous items
+also
+*/
 class Node{
     constructor(val){
         this.val=val;
@@ -5,6 +10,18 @@ class Node{
         this.next=null;
     }
 }
+
+/*
+
+Insert=>O(1)
+remove=>O(1)
+search=>O(n/2) ~ O(n)
+Access=>O(n)
+
+one advantage that singlyLinkedList require less memory
+as compared to doublyLinkedList
+*/
+
 class DoublyLinkedList{
     constructor(){
         this.head=null;

@@ -116,6 +116,31 @@ class DoublyLinkedList{
         }
         return false;
     }
+    insert(index,val)
+    {
+        if(index<0 || index>this.length){
+         return false;
+    }
+
+        if(index===this.length-1)
+        {
+            return Boolean(this.push(val));
+        }
+        if(index===0)
+        {
+            return Boolean(this.unshift(val));
+        }
+        let newNode=new Node(val);
+        let prev=this.get(index-1);
+        let after=prev.next;
+        newNode.next=after;
+        after.prev=newNode;
+        prev.next=newNode;
+        newNode.prev=prev;
+        this.length++;
+        
+        return true;
+    }
 }
 let list=new DoublyLinkedList();
 list.push("ashu");
@@ -123,5 +148,6 @@ list.push("ghildiyal");
 list.push("champ");
 list.shift();
 list.unshift("harry potter");
-list.set(0,"ron weisley")
+list.set(0,"ron weisley");
+list.insert(1,"mouse");
 console.log(list);

@@ -15,6 +15,11 @@ class Node{
     }
 }
 //SinglyLinkedList
+//Time Complexities
+//insertion O(1)
+//removal O(1) or O(n) depends
+//search O(n)
+//access O(n)
 class SinglyLinkedList{
     constructor()
     {

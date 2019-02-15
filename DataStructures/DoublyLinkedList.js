@@ -141,6 +141,28 @@ class DoublyLinkedList{
         
         return true;
     }
+    remove(index)
+    {
+        if(index<0 || index>this.length) return false;
+        if(index===0)
+        {
+            return this.shift();
+        }
+        if(index===this.length-1)
+        {
+            return this.pop();
+        }
+        let deletingNode=this.get(index);
+        let before=deletingNode.prev;
+        let after=deletingNode.next;
+        before.next=after;
+        after.prev=before;
+        deletingNode.prev=null;
+        deletingNode.next=null;
+        this.length--
+        return deletingNode;
+    }
+
 }
 let list=new DoublyLinkedList();
 list.push("ashu");
@@ -150,4 +172,6 @@ list.shift();
 list.unshift("harry potter");
 list.set(0,"ron weisley");
 list.insert(1,"mouse");
+
+console.log(list.remove(2));
 console.log(list);

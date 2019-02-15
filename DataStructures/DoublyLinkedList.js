@@ -106,6 +106,16 @@ class DoublyLinkedList{
         }
         return current;
     }
+    set(index,val)
+    {
+        let node=this.get(index);
+        if(node)
+        {
+            node.val=val;
+            return true;
+        }
+        return false;
+    }
 }
 let list=new DoublyLinkedList();
 list.push("ashu");
@@ -113,4 +123,5 @@ list.push("ghildiyal");
 list.push("champ");
 list.shift();
 list.unshift("harry potter");
-console.log(list.get(1));
+list.set(0,"ron weisley")
+console.log(list);

@@ -20,6 +20,10 @@ Access=>O(n)
 
 one advantage that singlyLinkedList require less memory
 as compared to doublyLinkedList
+
+Doubly linked list are used in storing pages in browsers
+where we can go to the previous as well as next
+
 */
 
 class DoublyLinkedList{
